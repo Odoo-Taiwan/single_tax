@@ -31,6 +31,7 @@ If you have any question or advice, please email us at service@richsoda.com or v
     'license': 'AGPL-3',
     'depends': [
         'sale',
+        'account',
     ],
     "external_dependencies": {
         "python": [],
