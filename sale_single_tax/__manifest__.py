@@ -21,7 +21,7 @@ Features
 
 Contact
 -------
-If you have any question or advice, please email us at [service@richsoda.com](mailto:service@richsoda.com) or visit [our website, https://richsoda.com](https://richsoda.com)
+If you have any question or advice, please email us at service@richsoda.com or visit our website, https://richsoda.com
     """,
     'author': "RichSoda," "Odoo Taiwan",
     'maintainer': 'RichSoda <service@richsoda.com>',
