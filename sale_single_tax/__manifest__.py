@@ -44,7 +44,7 @@ If you have any question or advice, please email us at service@richsoda.com or v
     ],
     'demo': [
     ],
-    'images': ['images/banner.png'],
+    'images': ['static/description/banner.png'],
     'application': False,
     'auto_install': False,
     'installable': True,
