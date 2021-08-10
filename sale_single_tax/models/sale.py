@@ -17,7 +17,7 @@ class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    single_tax = fields.Many2one('account.tax', string='Tax', domain='[("type_tax_use", "=", "sale")]')
+    single_tax = fields.Many2one('account.tax', string='Tax', domain='[("type_tax_use", "=", "sale")]', default=lambda self: self.env.company.account_sale_tax_id)
 
     @api.onchange('single_tax', 'order_line', 'order_line.product_id', 'order_line.tax_id')
     def single_tax_change(self):
