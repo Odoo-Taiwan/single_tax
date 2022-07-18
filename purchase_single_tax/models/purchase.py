@@ -24,6 +24,8 @@ class PurchaseOrder(models.Model):
     def single_tax_change(self):
         """
         When those field change will change product taxes in order line field
+
+        :return: None
         """
 
         for order in self:
@@ -32,6 +34,8 @@ class PurchaseOrder(models.Model):
     def button_confirm(self):
         """
         When user confirm the order. Product tax will become same as single tax
+
+        :return: None
         """
 
         self.single_tax_change()
@@ -40,6 +44,8 @@ class PurchaseOrder(models.Model):
     def action_rfq_send(self):
         """
         When user send the quotation of order. Product tax will become same as single tax
+
+        :return: Action
         """
 
         self.single_tax_change()
