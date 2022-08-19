@@ -18,7 +18,7 @@ A tax field in S/O instead of one tax rate per line. Makes all the lines in a S/
 
 Features
 --------
-* Support Odoo v15
+* Support Odoo v14
 * Sales
     - One single tax rate for S/Os
 
@@ -30,7 +30,7 @@ If you have any question or advice, please email us at service@richsoda.com or v
     'maintainer': 'RichSoda <service@richsoda.com>',
     'website': "https://www.facebook.com/groups/odoo.taiwan",
     'category': 'Accounting',
-    'version': '15.0.1.0',
+    'version': '14.0.1.0',
     'license': 'AGPL-3',
     'depends': [
         'sale',
