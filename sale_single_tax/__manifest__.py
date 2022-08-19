@@ -18,7 +18,7 @@ A tax field in S/O instead of one tax rate per line. Makes all the lines in a S/
 
 Features
 --------
-* Support Odoo v15
+* Support Odoo v12
 * Sales
     - One single tax rate for S/Os
 
