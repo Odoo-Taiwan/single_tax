@@ -1,2 +1,2 @@
-openerp>=13.0
-openerp<14.0
+openerp>=10.0
+openerp<11.0

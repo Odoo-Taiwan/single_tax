@@ -12,7 +12,7 @@ A tax field in P/O instead of one tax rate per line. Makes all the lines in a P/
 
 Features
 --------
-* Support Odoo v12
+* Support Odoo v10
 * Purchase
     - One single tax rate for P/Os
 

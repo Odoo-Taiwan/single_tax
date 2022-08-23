@@ -12,7 +12,7 @@ A tax field in S/O instead of one tax rate per line. Makes all the lines in a S/
 
 Features
 --------
-* Support Odoo v12
+* Support Odoo v10
 * Sales
     - One single tax rate for S/Os
 
