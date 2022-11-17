@@ -30,4 +30,4 @@ class PurchaseOrderLine(models.Model):
 
     _inherit = 'purchase.order.line'
 
-    taxes_id = fields.Many2many(related='order_id.taxes_id')
+    taxes_id = fields.Many2many(related='order_id.single_tax')
