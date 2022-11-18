@@ -30,7 +30,7 @@ If you have any question or advice, please email us at service@richsoda.com or v
     'maintainer': 'RichSoda <service@richsoda.com>',
     'website': "https://www.facebook.com/groups/odoo.taiwan",
     'category': 'Accounting',
-    'version': '11.0.1.0',
+    'version': '11.0.1.1',
     'license': 'AGPL-3',
     'depends': [
         'purchase',
