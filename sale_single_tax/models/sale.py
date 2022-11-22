@@ -17,7 +17,7 @@ class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    single_tax = fields.Many2many('account.tax', string='Tax', domain='[("type_tax_use", "=", "sale")]')
+    single_tax = fields.Many2many('account.tax', string='Tax', domain='[("type_tax_use", "=", "sale")]', default=lambda self: self.env.user.company_id.account_sale_tax_id)
 
 
 class SaleOrderLine(models.Model):

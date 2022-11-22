@@ -18,7 +18,7 @@ class PurchaseOrder(models.Model):
 
     _inherit = 'purchase.order'
 
-    single_tax = fields.Many2one('account.tax', string='Tax', domain='[("type_tax_use", "=", "purchase")]')
+    single_tax = fields.Many2one('account.tax', string='Tax', domain='[("type_tax_use", "=", "purchase")]', default=lambda self: self.env.user.company_id.account_purchase_tax_id)
 
 
 class PurchaseOrderLine(models.Model):
