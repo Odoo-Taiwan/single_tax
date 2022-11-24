@@ -21,7 +21,7 @@ class SaleOrder(models.Model):
         """
         Get sale default tax from res.config model
 
-        :return: Default tax record
+        :return: Sale default tax
         :rtype: object
         """
 
