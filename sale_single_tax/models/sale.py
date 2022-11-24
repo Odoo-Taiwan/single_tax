@@ -19,9 +19,9 @@ class SaleOrder(models.Model):
 
     def _get_default_tax(self):
         """
-        Get purchase default tax from res.config model
+        Get sale default tax from res.config model
 
-        :return: Purchase default tax
+        :return: Sale default tax
         :rtype: object
         """
 
