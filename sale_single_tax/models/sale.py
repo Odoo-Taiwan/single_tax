@@ -17,7 +17,17 @@ class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    single_tax = fields.Many2many('account.tax', string='Tax', domain='[("type_tax_use", "=", "sale")]')
+    def _get_default_tax(self):
+        """
+        Get purchase default tax from res.config model
+
+        :return: Purchase default tax
+        :rtype: object
+        """
+
+        return self.env['ir.default'].sudo().get('product.template', "taxes_id", company_id=self.company_id.id or self.env.user.company_id.id)
+
+    single_tax = fields.Many2many('account.tax', string='Tax', domain='[("type_tax_use", "=", "sale")]', default=lambda self: self._get_default_tax())
 
 
 class SaleOrderLine(models.Model):
