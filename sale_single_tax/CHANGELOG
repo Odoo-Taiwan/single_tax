@@ -5,11 +5,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [13.0.1.0.1] - 2021/08/10
-### Changed
-- Default order tax
+## [11.0.1.1] - 2022/11/18
+### Updated
+- Update single_tax field type to Many2many for sale.order model
 
-
-## [13.0.1.0] - 2021/06/30
 ### Added
-- Stable release
+- Add related to tax_id field for sale.order.line model
+
+
+## [11.0.1.0] - 2022/08/23
+### Updated
+- Update single_tax_change method and single_tax field for work on Odoo 11
+
+
+## [12.0.1.0] - 2022/08/19
+### Updated
+- Update single_tax_change method and single_tax field for work on Odoo 12
+
+
+## [15.0.1.0] - 2022/07/18
+### Changed
+- Check module for working on Odoo15

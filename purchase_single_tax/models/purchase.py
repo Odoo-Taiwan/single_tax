@@ -18,29 +18,26 @@ class PurchaseOrder(models.Model):
 
     _inherit = 'purchase.order'
 
-    single_tax = fields.Many2one('account.tax', string='Tax', domain='[("type_tax_use", "=", "purchase")]', default=lambda self: self.env.company.account_purchase_tax_id)
-
-    @api.onchange('single_tax', 'order_line', 'order_line.product_id', 'order_line.taxes_id')
-    def single_tax_change(self):
+    def _get_default_tax(self):
         """
-        When those field change will change product taxes in order line field
-        """
+        Get purchase default tax from res.config model
 
-        for order in self:
-            order.order_line.taxes_id = order.single_tax
-
-    def button_confirm(self):
-        """
-        When user confirm the order. Product tax will become same as single tax
+        :return: Purchase default tax
+        :rtype: object
         """
 
-        self.single_tax_change()
-        return super(PurchaseOrder, self).button_confirm()
+        return self.env['ir.default'].sudo().get('product.template', "supplier_taxes_id", company_id=self.company_id.id or self.env.user.company_id.id)
 
-    def action_rfq_send(self):
-        """
-        When user send the quotation of order. Product tax will become same as single tax
-        """
+    single_tax = fields.Many2many('account.tax', string='Tax', domain='[("type_tax_use", "=", "purchase")]', default=lambda self: self._get_default_tax())
 
-        self.single_tax_change()
-        return super(PurchaseOrder, self).action_rfq_send()
+
+class PurchaseOrderLine(models.Model):
+    """
+    Add related to taxes_id filed
+
+    [purchase.order]
+    """
+
+    _inherit = 'purchase.order.line'
+
+    taxes_id = fields.Many2many(related='order_id.single_tax')

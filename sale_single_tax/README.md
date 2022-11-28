@@ -1,8 +1,10 @@
 Single Tax for S/O 銷售訂單單一稅率
-===================================
+================================
 **One single tax rate for sales orders. 銷售訂單單一稅率**
 
-*By RichSoda Co., Ltd., Odoo Taiwan*
+*By RichSoda Co., Ltd., Odoo Taiwan. <service@richsoda.com> https://richsoda.com*
+
+This is a module for a web-based opensource business suite, [Odoo](http://odoo.com/).
 
 A tax field in S/O instead of one tax rate per line. Makes all the lines in a S/O the same tax rate.
 
@@ -10,9 +12,10 @@ A tax field in S/O instead of one tax rate per line. Makes all the lines in a S/
 
 Features
 --------
+* Support Odoo v11
 * Sales
     - One single tax rate for S/Os
 
 Contact
 -------
-If you have any question or advice, please email us at [service@richsoda.com](mailto:service@richsoda.com) or visit [our website, https://richsoda.com](https://richsoda.com)
+If you have any question or advice, please email us at service@richsoda.com or visit our website, https://richsoda.com
