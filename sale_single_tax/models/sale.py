@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 sale.py
@@ -17,29 +17,26 @@ class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    single_tax = fields.Many2one('account.tax', string='Tax', domain='[("type_tax_use", "=", "sale")]', default=lambda self: self.env.company.account_sale_tax_id)
-
-    @api.onchange('single_tax', 'order_line', 'order_line.product_id', 'order_line.tax_id')
-    def single_tax_change(self):
+    def _get_default_tax(self):
         """
-        When those field change will change product taxes in order line field
-        """
+        Get sale default tax from res.config model
 
-        for order in self:
-            order.order_line.tax_id = order.single_tax
-
-    def action_confirm(self):
-        """
-        When user confirm the order. Product tax will become same as single tax
+        :return: Sale default tax
+        :rtype: object
         """
 
-        self.single_tax_change()
-        return super(SaleOrder, self).action_confirm()
+        return self.env['ir.values'].get_default('product.template', 'taxes_id', company_id=self.env.user.company_id.id)
 
-    def action_quotation_send(self):
-        """
-        When user send the quotation of order. Product tax will become same as single tax
-        """
+    single_tax = fields.Many2many('account.tax', string='Tax', domain='[("type_tax_use", "=", "sale")]', default=lambda self: self._get_default_tax())
 
-        self.single_tax_change()
-        return super(SaleOrder, self).action_quotation_send()
+
+class SaleOrderLine(models.Model):
+    """
+    Add related to tax_id filed
+
+    [sale.order.line]
+    """
+
+    _inherit = 'sale.order.line'
+
+    tax_id = fields.Many2many(related='order_id.single_tax')
