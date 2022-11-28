@@ -5,10 +5,12 @@
     'summary': 'One single tax rate for purchase orders. 採購訂單單一稅率.',
     'description': """
 Single Tax for P/O 採購訂單單一稅率
-===================================
+================================
 **One single tax rate for purchase orders. 採購訂單單一稅率**
 
-*By RichSoda Co., Ltd., Odoo Taiwan*
+*By RichSoda Co., Ltd., Odoo Taiwan. <service@richsoda.com> https://richsoda.com*
+
+This is a module for a web-based opensource business suite, [Odoo](http://odoo.com/).
 
 A tax field in P/O instead of one tax rate per line. Makes all the lines in a P/O the same tax rate.
 
@@ -16,6 +18,7 @@ A tax field in P/O instead of one tax rate per line. Makes all the lines in a P/
 
 Features
 --------
+* Support Odoo v14
 * Purchase
     - One single tax rate for P/Os
 
@@ -27,7 +30,7 @@ If you have any question or advice, please email us at service@richsoda.com or v
     'maintainer': 'RichSoda <service@richsoda.com>',
     'website': "https://www.facebook.com/groups/odoo.taiwan",
     'category': 'Accounting',
-    'version': '13.0.1.0.1',
+    'version': '14.0.1.1',
     'license': 'AGPL-3',
     'depends': [
         'purchase',
