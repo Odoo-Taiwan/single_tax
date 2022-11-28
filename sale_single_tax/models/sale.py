@@ -15,6 +15,8 @@ class SaleOrder(models.Model):
     [sale.order]
     """
 
+    _inherit = 'sale.order'
+
     single_tax = fields.Many2many('account.tax', string='Tax', domain='[("type_tax_use", "=", "sale")]', default=lambda self: self.env.user.company_id.account_sale_tax_id)
 
 
