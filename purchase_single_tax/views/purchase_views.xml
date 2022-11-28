@@ -11,7 +11,7 @@
 					<attribute name="invisible">1</attribute>
 				</xpath>
 				<xpath expr="//field[@name='company_id']" position="after">
-					<field name="single_tax" />
+					<field name="single_tax" widget="many2many_tags"/>
 				</xpath>
 			</field>
 		</record>
